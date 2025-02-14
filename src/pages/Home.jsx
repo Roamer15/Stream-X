@@ -1,8 +1,5 @@
 import Navbar from "../components/navbar/Navbar"
 import LatestMovies from '../components/latest-movies/LatestMovies'
-// import { fetchMovies } from '../API/api'
-// import { useEffect, useState } from "react";
-
 
 export default function Home() {
 
