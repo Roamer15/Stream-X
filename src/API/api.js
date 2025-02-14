@@ -2,9 +2,9 @@
 // const BASE_URL = import.meta.env.VITE_BASE_BASE_URL
 // const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH
 
-export const fetchMovies = async() => {
+export const fetchMovies = async(URL) => {
     try {
-        const response = await fetch()
+        const response = await fetch(URL)
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
         }
