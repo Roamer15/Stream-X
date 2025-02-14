@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar/Navbar"
 import LatestMovies from '../components/latest-movies/LatestMovies'
+import DisplayMovies from "../components/display-movies/DisplayMovies"
 
 export default function Home() {
 
@@ -89,6 +90,8 @@ export default function Home() {
         </div>
         <LatestMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH}/>
       </div>
+
+      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Action' genre={28}/>
     </>
   );
 }
