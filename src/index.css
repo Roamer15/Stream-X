@@ -27,6 +27,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 100px;
+  color: #fff;
 
   img {
     width: 357px;
@@ -37,9 +39,59 @@ body {
 .initial {
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  font-family:  -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
+  align-items: center;
+  gap: 15px;
+  font-weight: 457;
+  font-size: 20px;
+  line-height: 23.87px;
+  padding-bottom: 20px;
 }
 
 .frame {
-  font-family:  -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
+  border: 1px solid #ffffff80;
+  padding: 6px 12px;
+  border-radius: 36px;
+  backdrop-filter: blur(40px)
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  color: #ffffffcc;
+  line-height: 19.36px;
+  text-align: center;
+  width: 436px;
+  padding-bottom: 20px;
+}
+
+.hero-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  width: 433px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    display: flex;
+    height: 54px;
+    width: 206px;
+    align-items: center;
+    border-radius: 40px;
+    line-height: 24.2px;
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
+.btn-right {
+  backdrop-filter: blur(4px);
+  background: #FFFFFF1A;
+  border: 1px solid #FFFFFF33;
+}
+
+.btn-left {
+  border: 1px solid #FFFFFF33;
+  background: #FFFFFFE5;
+  backdrop-filter: blur(40px);
+  color: #000;
 }
