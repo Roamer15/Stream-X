@@ -7,6 +7,8 @@ export default function Home() {
   const baseUrl = import.meta.env.VITE_BASE_BASE_URL
   const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH
 
+  console.log(apiKey)
+
   return (
     <>
       <div className="header">
