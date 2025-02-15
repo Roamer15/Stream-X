@@ -1,6 +1,8 @@
 import Navbar from "../components/navbar/Navbar"
 import LatestMovies from '../components/latest-movies/LatestMovies'
 import DisplayMovies from "../components/display-movies/DisplayMovies"
+import PopularMovies from '../components/popular/PopularMovies'
+import Footer from '../components/footer/Footer'
 
 export default function Home() {
 
@@ -91,7 +93,12 @@ export default function Home() {
         <LatestMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH}/>
       </div>
 
+      <PopularMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} path='popular'/>
       <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Action' genre={28}/>
+      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Romance & Drama' genre={10749}/>
+      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Comedy' genre={35}/>
+
+      <Footer />
     </>
   );
 }
