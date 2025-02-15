@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, title, genre }) {
   const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}`;
-  console.log(url)
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
 
 

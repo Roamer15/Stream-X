@@ -4,13 +4,11 @@
 
 export const fetchMovies = async(URL) => {
     try {
-        console.log(URL)
         const response = await fetch(URL)
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
         }
         const data =  await response.json()
-        console.log(data.results)
         return data.results
     }
     catch(error) {

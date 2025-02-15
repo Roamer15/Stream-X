@@ -21,6 +21,7 @@
     box-shadow: 0px 4px 14px 0px #0000004D;
     object-fit: cover;
     object-position: top;
+    cursor: pointer;
   }
   
   h1 {

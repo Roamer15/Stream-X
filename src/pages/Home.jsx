@@ -15,11 +15,11 @@ export default function Home() {
   const { setSelectedMovie } = useContext(DetailMovieContext)
   const navigate = useNavigate()
 
-  const handleMovieDetail = ({movie}) => {
+  const handleMovieDetail = (movie) => {
+    console.log(movie)
     setSelectedMovie(movie)
-    navigate(`/movie/${movie.id}`)
+    navigate(`/details/${movie.id}`)
   }
-  console.log(apiKey);
 
   return (
     <>

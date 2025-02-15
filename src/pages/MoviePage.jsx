@@ -1,8 +1,9 @@
 import { DetailMovieContext } from "../Context/context";
 import { useParams } from "react-router";
+import { useContext } from "react";
 
 const MoviePage = () => {
-  const { selectedMovie } = DetailMovieContext();
+  const { selectedMovie } = useContext(DetailMovieContext);
   const { id } = useParams();
 
   if (!selectedMovie || selectedMovie.id !== parseInt(id)) {
