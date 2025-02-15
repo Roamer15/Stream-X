@@ -7,6 +7,9 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, title, ge
   console.log(url)
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
 
+
+  
+
   if (loading) return <p>Loading popular movies...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
@@ -23,6 +26,7 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, title, ge
                   : "fallback_image_url"
               }
               alt={movie.title}
+              
             />
           </div>
         ))}

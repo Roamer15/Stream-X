@@ -1,16 +1,25 @@
-import Navbar from "../components/navbar/Navbar"
-import LatestMovies from '../components/latest-movies/LatestMovies'
-import DisplayMovies from "../components/display-movies/DisplayMovies"
-import PopularMovies from '../components/popular/PopularMovies'
-import Footer from '../components/footer/Footer'
+import Navbar from "../components/navbar/Navbar";
+import LatestMovies from "../components/latest-movies/LatestMovies";
+import DisplayMovies from "../components/display-movies/DisplayMovies";
+import PopularMovies from "../components/popular/PopularMovies";
+import Footer from "../components/footer/Footer";
+import { DetailMovieContext } from "../Context/context";
+import { useContext } from "react";
+import { useNavigate } from "react-router";
 
 export default function Home() {
+  const apiKey = import.meta.env.VITE_BASE_API_KEY;
+  const baseUrl = import.meta.env.VITE_BASE_BASE_URL;
+  const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH;
 
-  const apiKey = import.meta.env.VITE_BASE_API_KEY
-  const baseUrl = import.meta.env.VITE_BASE_BASE_URL
-  const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH
+  const { setSelectedMovie } = useContext(DetailMovieContext)
+  const navigate = useNavigate()
 
-  console.log(apiKey)
+  const handleMovieDetail = ({movie}) => {
+    setSelectedMovie(movie)
+    navigate(`/movie/${movie.id}`)
+  }
+  console.log(apiKey);
 
   return (
     <>
@@ -90,13 +99,41 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <LatestMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH}/>
+        <LatestMovies
+          API_KEY={apiKey}
+          BASE_URL={baseUrl}
+          IMAGE_PATH={IMAGE_PATH}
+        />
       </div>
 
-      <PopularMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} path='popular'/>
-      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Action' genre={28}/>
-      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Romance & Drama' genre={10749}/>
-      <DisplayMovies API_KEY={apiKey} BASE_URL={baseUrl} IMAGE_PATH={IMAGE_PATH} title='Comedy' genre={35}/>
+      <PopularMovies
+        API_KEY={apiKey}
+        BASE_URL={baseUrl}
+        IMAGE_PATH={IMAGE_PATH}
+        path="popular"
+        detail={handleMovieDetail}
+      />
+      <DisplayMovies
+        API_KEY={apiKey}
+        BASE_URL={baseUrl}
+        IMAGE_PATH={IMAGE_PATH}
+        title="Action"
+        genre={28}
+      />
+      <DisplayMovies
+        API_KEY={apiKey}
+        BASE_URL={baseUrl}
+        IMAGE_PATH={IMAGE_PATH}
+        title="Romance & Drama"
+        genre={10749}
+      />
+      <DisplayMovies
+        API_KEY={apiKey}
+        BASE_URL={baseUrl}
+        IMAGE_PATH={IMAGE_PATH}
+        title="Comedy"
+        genre={35}
+      />
 
       <Footer />
     </>

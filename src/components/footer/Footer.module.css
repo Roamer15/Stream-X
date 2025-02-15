@@ -1,5 +1,6 @@
 .topFooter {
     padding: 0 48px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
     font-family: 'Inter', sans-serif;
@@ -27,6 +28,7 @@
     height: 44px;
     border-radius: 40px;
     border: 1px solid #FFFFFF33;
+    background: #FFFFFF33;
     backdrop-filter: blur(40px);
     display: flex;
     align-items: center;
@@ -65,5 +67,32 @@
         object-fit: cover;
         object-position: center;
         background: #000;
+        margin-bottom: 20px;
+    }
+}
+
+.bottomFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #FFFFFF33
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 20px 48px;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        li {
+            font-family: var(--secondary-font);
+            line-height: 19.36px;
+            color: #FFFFFF80;
+            list-style: none;
+        }
     }
 }

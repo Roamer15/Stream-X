@@ -2,7 +2,7 @@ import styles from "./PopularMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 
-export default function PopularMovies({ API_KEY, BASE_URL, IMAGE_PATH, path }) {
+export default function PopularMovies({ API_KEY, BASE_URL, IMAGE_PATH, path, redirect }) {
   const popularUrl = `${BASE_URL}/movie/${path}?api_key=${API_KEY}`;
 
   const { movies: latestMovies, loading, error } = useFetchMovies(popularUrl);
@@ -23,6 +23,7 @@ export default function PopularMovies({ API_KEY, BASE_URL, IMAGE_PATH, path }) {
                   : "fallback_image_url"
               }
               alt={movie.title}
+              onClick={redirect}
             />
           </div>
         ))}
@@ -35,5 +36,6 @@ PopularMovies.propTypes = {
     API_KEY: PropTypes.string.isRequired,
     BASE_URL: PropTypes.string.isRequired,
     IMAGE_PATH: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
+    path: PropTypes.string.isRequired,
+    redirect: PropTypes.func
   };
