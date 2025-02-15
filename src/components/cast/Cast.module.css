@@ -1,0 +1,56 @@
+.h2 {
+    font-family: var(--secondary-font);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.12px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 0 50px;
+}
+
+.cast {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    overflow-x: auto;
+    gap: 12px;
+
+}
+
+.profiles {
+    min-width: 171px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+  
+    img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    h4 {
+        font-family: var(--secondary-font);
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.5%;
+        color: #F9F9F9;
+    }
+
+    h6 {
+        font-family: var(--secondary-font);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.5%;
+        color: #9CA4AB;
+    }
+}
+
+.perso {
+    display: flex;
+    flex-direction: column;
+}
