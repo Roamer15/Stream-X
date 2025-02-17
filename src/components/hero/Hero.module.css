@@ -1,20 +1,69 @@
 .hero {
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-bottom: 50px;
+  padding: 0 75px 0 50px;
 }
 
 .movieDetail {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: baseline;
-    padding-top: 100px;
-    color: #fff;
-  
-    img {
-      width: 357px;
-      height: 137.53px;
-    }
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+
+  h1 {
+    padding-left: 0;
+    font-size: 50px;
+    padding-bottom: 50px;
+    font-weight: 1000;
+    text-transform: uppercase;
   }
+}
+
+.detailInitial {
+  display: flex;
+  justify-content: space-between;
+  font-family:  var(--primary-font);
+  align-items: center;
+  gap: 15px;
+  font-weight: 457;
+  font-size: 20px;
+  line-height: 23.87px;
+  padding-bottom: 20px;
+  width: 433px;
+}
+
+.movieDescription {
+  color: #ffffffcc;
+  font-family: var(--secondary-font);
+  margin-top: 50px;
+  padding-right: 75px;
+}
+
+.heroSubs {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-right: 75px;
+}
+
+.functionBtn {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FFFFFF33;
+  background: #FFFFFF1A;
+  border-radius: 50%;
+}
+
+.heroBtns {
+  display: flex;
+  justify-content: space-between;
+}

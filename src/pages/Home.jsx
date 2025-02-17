@@ -103,6 +103,7 @@ export default function Home() {
           API_KEY={apiKey}
           BASE_URL={baseUrl}
           IMAGE_PATH={IMAGE_PATH}
+          detail={handleMovieDetail}
         />
       </div>
 
@@ -119,6 +120,7 @@ export default function Home() {
         IMAGE_PATH={IMAGE_PATH}
         title="Action"
         genre={28}
+        detail={handleMovieDetail}
       />
       <DisplayMovies
         API_KEY={apiKey}
@@ -126,6 +128,7 @@ export default function Home() {
         IMAGE_PATH={IMAGE_PATH}
         title="Romance & Drama"
         genre={10749}
+        detail={handleMovieDetail}
       />
       <DisplayMovies
         API_KEY={apiKey}
@@ -133,6 +136,7 @@ export default function Home() {
         IMAGE_PATH={IMAGE_PATH}
         title="Comedy"
         genre={35}
+        detail={handleMovieDetail}
       />
 
       <Footer />

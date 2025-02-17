@@ -2,7 +2,7 @@ import styles from "./LatestMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 
-export default function LatestMovies({ API_KEY, BASE_URL, IMAGE_PATH }) {
+export default function LatestMovies({ API_KEY, BASE_URL, IMAGE_PATH, detail }) {
   const latestUrl = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}`;
 
   const { movies: latestMovies, loading, error } = useFetchMovies(latestUrl);
@@ -24,6 +24,7 @@ export default function LatestMovies({ API_KEY, BASE_URL, IMAGE_PATH }) {
                   : "fallback_image_url"
               }
               alt={movie.title}
+              onClick={()=> detail(movie)}
             />
           </div>
         ))}
@@ -36,4 +37,5 @@ LatestMovies.propTypes = {
     API_KEY: PropTypes.string.isRequired,
     BASE_URL: PropTypes.string.isRequired,
     IMAGE_PATH: PropTypes.string.isRequired,
+    detail: PropTypes.func
   };

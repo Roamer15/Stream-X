@@ -1,0 +1,33 @@
+.carouselSimilar {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    padding: 16px 47px;
+    margin-bottom: 20px;
+  }
+  
+  .movieCommon {
+    flex: 0 0 auto;
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .movieCommon img {
+    width: 251px;
+    height: 171px;
+    border-radius: 12px;
+    border: 1px solid #FFFFFF33;
+    box-shadow: 0px 4px 14px 0px #0000004D;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  h1 {
+      font-family: var(--secondary-font);
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 33.89px;
+      color: #fff;
+      padding-left: 47px;
+  }

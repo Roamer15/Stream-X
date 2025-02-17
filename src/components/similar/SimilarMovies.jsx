@@ -1,13 +1,10 @@
-import styles from "./DisplayMovies.module.css";
+import styles from "./SimilarMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 
 export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, title, genre, detail }) {
-  const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}`;
+  const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}&page=2`;
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
-
-
-  
 
   if (loading) return <p>Loading popular movies...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -15,7 +12,7 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, title, ge
   return (
     <>
       <h1>{title}</h1>
-      <div className={styles.carouselCommon}>
+      <div className={styles.carouselSimilar}>
         {latestMovies.map((movie) => (
           <div className={styles.movieCommon} key={movie.id}>
             <img

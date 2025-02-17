@@ -10,7 +10,7 @@ export default function PopularMovies({ API_KEY, BASE_URL, IMAGE_PATH, path, det
   if (loading) return <p>Loading popular movies...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  console.log(detail)
+  console.log(latestMovies)
 
   return (
     <>

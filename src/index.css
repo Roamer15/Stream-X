@@ -101,3 +101,7 @@ body {
   backdrop-filter: blur(40px);
   color: #000;
 }
+
+.h1-detail {
+  margin-top: 50px;
+}
