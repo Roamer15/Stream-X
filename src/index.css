@@ -28,6 +28,16 @@ body {
   background-repeat: no-repeat;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  color: #ff4a47;
+  transition: 0.3s ease-in;
+  transform: scale(1.01);
+}
+
 .movie-detail {
   display: flex;
   flex-direction: column;
@@ -124,4 +134,9 @@ body {
   100% {
      transform: rotate(1turn);
   }
+}
+
+img:hover {
+  transition: 0.2s ease-in;
+  transform: scale(1.05);
 }
