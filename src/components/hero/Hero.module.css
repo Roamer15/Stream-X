@@ -1,6 +1,6 @@
 .hero {
   background-size: cover;
-  background-position: center;
+  background-position: 0vh;
   height: 800px;
   background-repeat: no-repeat;
   position: relative;
@@ -28,7 +28,7 @@
 .detailInitial {
   display: flex;
   justify-content: space-between;
-  font-family:  var(--primary-font);
+  font-family: var(--primary-font);
   align-items: center;
   gap: 15px;
   font-weight: 457;
@@ -58,8 +58,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #FFFFFF33;
-  background: #FFFFFF1A;
+  border: 1px solid #ffffff33;
+  background: #ffffff1a;
   border-radius: 50%;
 }
 

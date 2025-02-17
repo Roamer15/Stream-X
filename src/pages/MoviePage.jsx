@@ -36,7 +36,7 @@ const MoviePage = () => {
           `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
         );
         const data = await response.json();
-        setCast(data.cast.slice(0, 5)); // Get the top 5 cast members
+        setCast(data.cast.slice(0, 6)); // Get the top 5 cast members
       } catch (error) {
         console.error("Error fetching cast:", error);
       }

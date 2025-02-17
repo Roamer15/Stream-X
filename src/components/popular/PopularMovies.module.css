@@ -1,34 +1,60 @@
 .carouselPopular {
-    display: flex;
-    overflow-x: auto;
-    gap: 14px;
-    padding: 16px 47px;
-    margin-bottom: 100px;
-  }
-  
-  .moviePopular {
-    flex: 0 0 auto;
-    text-align: center;
-    position: relative;
-    padding: 20px 0;
-  }
-  
-  .moviePopular img {
-    width: 251px;
-    height: 171px;
-    border-radius: 12px;
-    border: 1px solid #FFFFFF33;
-    box-shadow: 0px 4px 14px 0px #0000004D;
-    object-fit: cover;
-    object-position: top;
-    cursor: pointer;
-  }
-  
-  h1 {
-      font-family: var(--secondary-font);
-      font-weight: 500;
-      font-size: 28px;
-      line-height: 33.89px;
-      color: #fff;
-      padding-left: 47px;
-  }
+  display: flex;
+  overflow-x: hidden;
+  gap: 14px;
+  padding: 16px 47px;
+  margin-bottom: 100px;
+}
+
+
+.carouselPopular:hover {
+  transition: 0.5s ease-in-out;
+  overflow-x: auto;
+}
+
+.moviePopular {
+  flex: 0 0 auto;
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+.moviePopular img {
+  width: 251px;
+  height: 171px;
+  border-radius: 12px;
+  border: 1px solid #ffffff33;
+  box-shadow: 0px 4px 14px 0px #0000004d;
+  object-fit: cover;
+  object-position: top;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33.89px;
+  color: #fff;
+  padding-left: 47px;
+}
+
+.headerCarousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextMovie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  width: 120px;
+  padding: 2px;
+  border-radius: 40px;
+  border: 1px solid #ffffff33;
+  backdrop-filter: blur(40px);
+  background: #ffffff33;
+  margin-right: 47px;
+}
