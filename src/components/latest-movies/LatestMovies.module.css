@@ -1,14 +1,27 @@
 .carousel {
   display: flex;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   gap: 138px;
   padding: 16px;
+  animation: scroll 1s;
+  animation-timing-function: cubic-bezier(0.53, 0.03, 0.43, 0.73);
+  animation-duration: 1.1s
 }
 
 .carousel:hover {
   transition: 0.5s ease-in-out;
   overflow-x: auto;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .movie {
