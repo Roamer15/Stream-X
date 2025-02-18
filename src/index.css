@@ -188,3 +188,44 @@ img:hover {
   transition: 0.3s ease-in-out;
   color: #ff4a47; 
 }
+
+.favourites-container {
+  text-align: center;
+  padding: 20px;
+
+  p {
+    color: #fff;
+    font-size: 50px;
+    padding: 0 20px;
+    margin: 50px;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

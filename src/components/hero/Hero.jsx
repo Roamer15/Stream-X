@@ -45,6 +45,7 @@ export default function Hero({ title, backgroundImage, description, storage, mov
                 </svg>
                 Watch Now
               </button>
+              {console.log(movie)}
               <button className="btn-right" onClick={() => storage(movie)}>
                 <svg
                   width="14"

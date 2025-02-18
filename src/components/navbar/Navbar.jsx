@@ -40,7 +40,7 @@ export default function Navbar() {
         <a href="#">Movies</a>
         <a href="#">Series</a>
         <a href="#">Trending</a>
-        <a href="#">Categories</a>
+        <a href="/favourites">Favourites</a>
       </div>
       <div className={styles.search}>
         <SearchBar />

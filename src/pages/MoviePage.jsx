@@ -31,18 +31,19 @@ const MoviePage = () => {
   const handleStorage = (movie) => {
     
     const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-    console.log(movie.id)
-    const isMovieInWatchlist = watchlist.some((item) => item.id === movie.id);
-    console.log(isMovieInWatchlist)
+
+    const isMovieInWatchlist = watchlist.some((item) =>{
+          item.id === movie.id});
   
     if (!isMovieInWatchlist) {
       watchlist.push(movie);
   
       localStorage.setItem('watchlist', JSON.stringify(watchlist));
+      console.log(movie.title)
   
-      console.log('Movie added to watchlist:', movie);
+      alert(`movie added to watchlist: ${movie.title}`);
     } else {
-      console.log('Movie is already in the watchlist:', movie);
+      alert(`Movie is already in the watchlist: ${movie.title}`);
     }
   };
 
@@ -70,7 +71,7 @@ const MoviePage = () => {
   return (
     <>
       <Hero
-        backgroundImage={selectedMovie.poster_path}
+        backgroundImage={selectedMovie.backdrop_path? selectedMovie.backdrop_path:selectedMovie.poster_path}
         description={selectedMovie.overview}
         title={selectedMovie.title}
         storage={handleStorage}
