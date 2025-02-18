@@ -21,8 +21,6 @@ export default function PopularMovies({
   if (loading) return <div className="spinner">Loading movies</div>;;
   if (error) return <p>Error: {error.message}</p>;
 
-  console.log(latestMovies);
-
   return (
     <>
       <div className={styles.headerCarousel}>

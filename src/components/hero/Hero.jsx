@@ -2,7 +2,8 @@ import styles from "./Hero.module.css";
 import Navbar from "../navbar/Navbar";
 import PropTypes from "prop-types";
 
-export default function Hero({ title, backgroundImage, description }) {
+export default function Hero({ title, backgroundImage, description, storage, movie }) {
+
   return (
     <>
       <div
@@ -44,7 +45,7 @@ export default function Hero({ title, backgroundImage, description }) {
                 </svg>
                 Watch Now
               </button>
-              <button className="btn-right">
+              <button className="btn-right" onClick={() => storage(movie)}>
                 <svg
                   width="14"
                   height="19"
@@ -125,4 +126,6 @@ Hero.propTypes = {
   backgroundImage: PropTypes.string,
   description: PropTypes.string,
   title: PropTypes.string,
+  movie: PropTypes.obj,
+  storage: PropTypes.func
 };

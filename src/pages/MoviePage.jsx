@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 import Footer from '../components/footer/Footer'
 
 const API_KEY = import.meta.env.VITE_BASE_API_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+const BASE_URL = import.meta.env.VITE_BASE_BASE_URL;
 
 const MoviePage = () => {
   const { selectedMovie } = useContext(DetailMovieContext);
@@ -28,6 +28,24 @@ const MoviePage = () => {
     navigate(`/details/${movie.id}`)
   }
 
+  const handleStorage = (movie) => {
+    
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    console.log(movie.id)
+    const isMovieInWatchlist = watchlist.some((item) => item.id === movie.id);
+    console.log(isMovieInWatchlist)
+  
+    if (!isMovieInWatchlist) {
+      watchlist.push(movie);
+  
+      localStorage.setItem('watchlist', JSON.stringify(watchlist));
+  
+      console.log('Movie added to watchlist:', movie);
+    } else {
+      console.log('Movie is already in the watchlist:', movie);
+    }
+  };
+
   // Fetch Cast Data
   useEffect(() => {
     const fetchCast = async () => {
@@ -36,7 +54,7 @@ const MoviePage = () => {
           `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
         );
         const data = await response.json();
-        setCast(data.cast.slice(0, 6)); // Get the top 5 cast members
+        setCast(data.cast.slice(0, 6)); // Get the top 6 cast members
       } catch (error) {
         console.error("Error fetching cast:", error);
       }
@@ -55,6 +73,8 @@ const MoviePage = () => {
         backgroundImage={selectedMovie.poster_path}
         description={selectedMovie.overview}
         title={selectedMovie.title}
+        storage={handleStorage}
+        movie={selectedMovie}
       />
       <Cast cast={cast} />
 
