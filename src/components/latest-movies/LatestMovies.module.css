@@ -108,7 +108,7 @@ h1 {
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #ffffff; /* Change color to match your theme */
+  border-top: 4px solid #ff4a47; /* Change color to match your theme */
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -122,12 +122,6 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.loadingSpinner p {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #ffffff; /* Change color to match your theme */
 }
 
 @media (max-width: 768px) {

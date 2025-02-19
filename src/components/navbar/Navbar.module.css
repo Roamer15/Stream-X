@@ -12,6 +12,10 @@
     animation-duration: 1s;
 }
 
+svg {
+  cursor: pointer;
+}
+
 @keyframes slideIn {
     from {
       transform: translateX(-100%);

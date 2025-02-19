@@ -6,7 +6,6 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, genre, de
   const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}&page=2`;
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
 
-  if (loading) return <div className="spinner">Loading movies</div>;;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
