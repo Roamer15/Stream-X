@@ -1,16 +1,4 @@
-// import {useEffect} from 'react'
 
-// export default function Favourites() {
-
-//     const favouriteMovies = JSON.parse(localStorage.getItem('watchlist')) || []
-
-//     useEffect(() => {
-//     },[favouriteMovies])
-
-//     return (
-
-//     )
-// }
 import { useEffect, useState } from 'react';
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
