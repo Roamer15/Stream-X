@@ -1,9 +1,11 @@
 import styles from "./Hero.module.css";
 import Navbar from "../navbar/Navbar";
 import PropTypes from "prop-types";
-
 export default function Hero({ title, backgroundImage, description, storage, movie }) {
 
+  const handleMovie = (id) => {
+    window.location.href=`https://www.themoviedb.org/movie/${id}`
+  }
   return (
     <>
       <div
@@ -25,7 +27,7 @@ export default function Hero({ title, backgroundImage, description, storage, mov
           </div>
           <div className={styles.heroBtns}>
             <div className={styles.heroBtn}>
-              <button className="btn-left">
+              <button className="btn-left" onClick={()=>handleMovie(movie.id)}>
                 <svg
                   width="20"
                   height="20"

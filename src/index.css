@@ -165,6 +165,8 @@ img:hover {
   border-radius: 8px;
   margin-top: 20px;
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #ff4a47  rgba(255, 255, 255, 0.1);
 }
 
 .search-item {

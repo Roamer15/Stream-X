@@ -4,6 +4,8 @@
   gap: 14px;
   padding: 16px 47px;
   margin-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #ff4a47  rgba(255, 255, 255, 0.1);
 }
 
 .carouselSimilar:hover {
