@@ -127,20 +127,15 @@ button:hover {
 }
 
 .spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  width: 56px;
-  height: 56px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #ff4a47; /* Change color to match your theme */
   border-radius: 50%;
-  background: radial-gradient(farthest-side,#ff4a47 94%,#0000) top/9px 9px no-repeat,
-         conic-gradient(#0000 30%,#ff4a47);
-  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
-  animation: spinner-c7wet2 1s infinite linear;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 }
 
-@keyframes spinner-c7wet2 {
+@keyframes spin {
   100% {
      transform: rotate(1turn);
   }
