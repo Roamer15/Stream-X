@@ -15,7 +15,7 @@ export default function DisplayMovies({
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
 
   if (loading) return <div className={styles.common}>
-    <div className="spinner">Loading movies</div>
+    <div className="spinner"></div>
     </div>
   if (error) return <p>Error: {error.message}</p>;
 
