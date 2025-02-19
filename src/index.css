@@ -45,10 +45,24 @@ button:hover {
   justify-content: center;
   padding-top: 100px;
   color: #fff;
+  animation: slideUp ease-in;
+  animation-duration: 1s;
+  margin-bottom: 20px;
 
   img {
     width: 357px;
     height: 137.53px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -228,4 +242,83 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full screen height */
+  text-align: center;
+  background-color: #121212; /* Dark theme */
+  color: #fff; /* White text */
+  padding: 20px;
+}
+
+.error-container h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff4949; /* Red for error indication */
+}
+
+.error-container p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ccc; /* Light grey for readability */
+}
+
+.back-button {
+  display: flex;
+  height: 54px;
+  width: 206px;
+  align-items: center;
+  border-radius: 40px;
+  line-height: 24.2px;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  background-color: #ff4949; /* Red button */
+  color: white;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: #e63939; /* Slightly darker red */
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 830px;
+    img {
+      height: 110px;
+      width: 280px;
+    }
+  }
+
+  .movie-detail {
+    padding-top: 60px;
+  }
+
+  .initial {
+    font-size: 14px;
+  }
+
+  .description {
+    width: 300px;
+    font-size: 12px;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+    width: 300px;
+  
+    button {
+      height: 39px;
+      width: 140px;
+    }
+  }
 }

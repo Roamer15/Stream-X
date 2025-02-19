@@ -8,11 +8,8 @@ import { useContext } from "react";
 import { useNavigate } from "react-router";
 
 export default function Home() {
-  const apiKey = import.meta.env.VITE_BASE_API_KEY;
-  const baseUrl = import.meta.env.VITE_BASE_BASE_URL;
-  const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH;
 
-  const { setSelectedMovie } = useContext(DetailMovieContext)
+  const { setSelectedMovie, apiKey, baseUrl, IMAGE_PATH } = useContext(DetailMovieContext)
   const navigate = useNavigate()
 
   const handleMovieDetail = (movie) => {

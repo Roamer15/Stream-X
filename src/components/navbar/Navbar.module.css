@@ -8,7 +8,20 @@
 .logo {
     display: flex;
     align-items: center;
+    animation: slideIn ease-in;
+    animation-duration: 1s;
 }
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
 .nav {
     display: flex;
@@ -17,6 +30,8 @@
     width: 461px;
     height: 32px;
     gap: 30px;
+    animation: slideDown ease-in;
+    animation-duration: 1s;
 
     a {
         line-height: 23.87px;
@@ -24,8 +39,49 @@
         font-weight: 457;
         color: #fff;
         text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            color: #ff4949;
+            transform: scale(1.1);
+        }
     }
 }
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #ff4949;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between logo and nav */
+  }
+  
+
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
 .search {
     height: 39.09px;
@@ -33,7 +89,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-
+    animation: slideRight ease-in;
+    animation-duration: 1s;
 
     input {
         font-family: 'Inter', sans-serif;
@@ -45,6 +102,17 @@
         color: #fff;
     }
 }
+
+@keyframes slideRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
 .input {
     display: flex;
@@ -59,3 +127,67 @@
     height: 39px;
     border-radius: 50%;
 }
+
+.hamburger {
+    display: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .navbar {
+        padding: 16px 25px;
+    }
+
+    .navContainer {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  
+    .nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      height: 100%;
+      width: 200px;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      z-index: -5;
+      transition: transform 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+  
+    .nav.open {
+      transition: 0.2s ease-in-out;
+      transform: translateX(0);
+      z-index: 5;
+    }
+  
+    .nav a {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+  
+    /* Keep search bar visible */
+    .search {
+      display: none;
+    }
+
+    .input {
+        display: flex;
+    }
+  }

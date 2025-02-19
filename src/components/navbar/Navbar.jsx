@@ -1,11 +1,19 @@
 import styles from "./Navbar.module.css";
 import SearchBar from '../search/SearchBar'
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   
   return (
     <div className={styles.navbar}>
+      <div className={styles.navContainer}>
       <div className={styles.logo}>
         <svg
           width="93"
@@ -35,13 +43,20 @@ export default function Navbar() {
           />
         </svg>
       </div>
-      <div className={styles.nav}>
+
+      <div className={styles.hamburger} onClick={toggleMenu}>
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+      </div>
+
+      <div className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
         <a href="/">Home</a>
         <a href="#">Movies</a>
         <a href="#">Series</a>
         <a href="#">Trending</a>
         <a href="/favourites">Favourites</a>
       </div>
+      </div>
+      
       <div className={styles.search}>
         <SearchBar />
         <div className={styles.profile}>

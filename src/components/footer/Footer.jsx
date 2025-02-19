@@ -123,6 +123,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className={styles.row}>
+          <div className={styles.svg}>
           <svg
             width="93"
             height="15"
@@ -150,6 +151,8 @@ export default function Footer() {
               fill="#FF4949"
             />
           </svg>
+          </div>
+          
         </div>
       </div>
     </footer>

@@ -96,3 +96,49 @@
     }
   }
 }
+
+.svg {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .topFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+    padding: 0 16px;
+  }
+
+  .column {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottomFooter {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .row ul {
+    gap: 10px;
+  }
+
+  .svg{
+    width: 83px;
+    height: 12px;
+  }
+}

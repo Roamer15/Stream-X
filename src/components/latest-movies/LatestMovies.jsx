@@ -2,7 +2,6 @@ import styles from "./LatestMovies.module.css";
 import { useContext } from "react";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
-import { DetailMovieContext } from "../../Context/context";
 
 export default function LatestMovies({
   API_KEY,
@@ -11,20 +10,17 @@ export default function LatestMovies({
   detail,
 }) {
 
-  const {scrollNext, carouselRef} = useContext(DetailMovieContext)
-
   const latestUrl = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}`;
 
   const { movies: latestMovies, loading, error } = useFetchMovies(latestUrl);
 
-  if (loading) return <div className="spinner">Loading movies</div>;;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
       <div className={styles.headerCarousel}>
         <h1>Latest & Trending</h1>
-        <button className={styles.nextMovie} onClick={scrollNext}>
+        <button className={styles.nextMovie}>
           View More
           <svg
             width="7"
@@ -40,7 +36,12 @@ export default function LatestMovies({
           </svg>
         </button>
       </div>
-      <div className={styles.carousel}  ref={carouselRef}>
+      {loading? (
+        <div className={styles.loadingSpinner}>
+          <div className={styles.spinner}></div>
+        </div>
+      ): (
+        <div className={styles.carousel}>
         {latestMovies.map((movie, index) => (
           <div className={styles.movie} key={movie.id}>
             <span className={styles.number}>{index + 1}</span>
@@ -56,6 +57,8 @@ export default function LatestMovies({
           </div>
         ))}
       </div>
+      )}
+      
     </>
   );
 }

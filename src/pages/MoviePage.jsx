@@ -7,19 +7,10 @@ import SimilarMovies from "../components/similar/SimilarMovies";
 import { useNavigate } from "react-router";
 import Footer from '../components/footer/Footer'
 
-const API_KEY = import.meta.env.VITE_BASE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_BASE_URL;
-
 const MoviePage = () => {
-  const { selectedMovie } = useContext(DetailMovieContext);
+  const { selectedMovie, apiKey, baseUrl, IMAGE_PATH, setSelectedMovie } = useContext(DetailMovieContext);
   const { id } = useParams();
   const [cast, setCast] = useState([]);
-
-  const apiKey = import.meta.env.VITE_BASE_API_KEY;
-  const baseUrl = import.meta.env.VITE_BASE_BASE_URL;
-  const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH;
-
-  const { setSelectedMovie } = useContext(DetailMovieContext)
   const navigate = useNavigate()
 
   const handleMovieDetail = (movie) => {
@@ -52,7 +43,7 @@ const MoviePage = () => {
     const fetchCast = async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`
+          `${baseUrl}/movie/${id}/credits?api_key=${apiKey}`
         );
         const data = await response.json();
         setCast(data.cast.slice(0, 6)); // Get the top 6 cast members
@@ -65,8 +56,14 @@ const MoviePage = () => {
   }, [id]);
 
   if (!selectedMovie || selectedMovie.id !== parseInt(id)) {
-    return <h2>Movie not found. Please go back and select a movie.</h2>;
-  }
+    return (
+      <div className="error-container">
+        <h1>Movie Not Found</h1>
+        <p>The movie you are looking for does not exist. Please go back and select a valid movie.</p>
+        <a href="/" className="back-button">Go Back</a>
+      </div>
+    );
+  }  
 
   return (
     <>

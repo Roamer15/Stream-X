@@ -18,6 +18,57 @@
 
 }
 
+.cast {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-behavior: smooth;
+    animation: scroll;
+    animation-timing-function: cubic-bezier(0.53, 0.03, 0.43, 0.73);
+    animation-duration: 1s;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+  }
+  
+  /* Custom Scrollbar */
+  .cast::-webkit-scrollbar {
+    height: 8px; /* Thin scrollbar */
+  }
+  
+  .cast::-webkit-scrollbar-track {
+    background: #ff4a47; /* Light transparent background */
+    border-radius: 10px;
+  }
+  
+  .cast::-webkit-scrollbar-thumb {
+    background: #ff4a47; /* Semi-transparent thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .cast:hover::-webkit-scrollbar-thumb {
+    background: #fff; /* Becomes more visible on hover */
+  }
+  
+  /* Firefox scrollbar */
+  .cast {
+    scrollbar-width: none;
+    scrollbar-color: #ff4a47  rgba(255, 255, 255, 0.1);
+    transition: 0.6s ease-in-out;
+  }
+  
+  @keyframes scroll {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(30%);
+        opacity: 1;
+    }
+  }
+
 .profiles {
     min-width: 171px;
     display: grid;

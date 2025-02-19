@@ -76,6 +76,12 @@
   }
 }
 
+.common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   font-family: var(--secondary-font);
   font-weight: 500;
@@ -83,12 +89,25 @@ h1 {
   line-height: 33.89px;
   color: #fff;
   padding-left: 47px;
-  animation: fade-in;
+  animation: slideIn ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .headerCarousel {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nextMovie {
@@ -104,4 +123,44 @@ h1 {
   backdrop-filter: blur(40px);
   background: #ffffff33;
   margin-right: 47px;
+  animation: slideRight ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .carouselCommon {
+    gap: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+  }
+
+  .movieCommon img {
+    width: 160px;
+    height: 120px;
+  }
+
+  .headerCarousel h1 {
+    font-size: 18px;
+    padding-left: 16px;
+  }
+
+  .nextMovie {
+    width: 100px;
+    font-size: 14px;
+    height: 40px;
+    margin-right: 16px;
+  }
 }

@@ -2,7 +2,6 @@ import styles from "./PopularMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import { DetailMovieContext } from "../../Context/context";
 
 export default function PopularMovies({
   API_KEY,
@@ -11,21 +10,17 @@ export default function PopularMovies({
   path,
   detail,
 }) {
-
-  const {scrollNext, carouselRef} = useContext(DetailMovieContext)
-
   const popularUrl = `${BASE_URL}/movie/${path}?api_key=${API_KEY}`;
 
   const { movies: latestMovies, loading, error } = useFetchMovies(popularUrl);
 
-  if (loading) return <div className="spinner">Loading movies</div>;;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
       <div className={styles.headerCarousel}>
         <h1>Top Searches</h1>
-        <button className={styles.nextMovie} onClick={scrollNext}>
+        <button className={styles.nextMovie}>
           View More
           <svg
             width="7"
@@ -41,21 +36,28 @@ export default function PopularMovies({
           </svg>
         </button>
       </div>
-      <div className={styles.carouselPopular} ref={carouselRef}>
-        {latestMovies.map((movie) => (
-          <div className={styles.moviePopular} key={movie.id}>
-            <img
-              src={
-                movie.poster_path
-                  ? `${IMAGE_PATH}${movie.poster_path}`
-                  : "fallback_image_url"
-              }
-              alt={movie.title}
-              onClick={() => detail(movie)}
-            />
-          </div>
-        ))}
-      </div>
+
+      {loading ? (
+        <div className={styles.loadingSpinner}>
+          <div className={styles.spinner}></div>
+        </div>
+      ) : (
+        <div className={styles.carouselPopular}>
+          {latestMovies.map((movie) => (
+            <div className={styles.moviePopular} key={movie.id}>
+              <img
+                src={
+                  movie.poster_path
+                    ? `${IMAGE_PATH}${movie.poster_path}`
+                    : "fallback_image_url"
+                }
+                alt={movie.title}
+                onClick={() => detail(movie)}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

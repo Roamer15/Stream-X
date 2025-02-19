@@ -2,7 +2,6 @@ import styles from "./DisplayMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import { DetailMovieContext } from "../../Context/context";
 
 export default function DisplayMovies({
   API_KEY,
@@ -13,19 +12,19 @@ export default function DisplayMovies({
   detail,
 }) {
 
-  const {scrollNext, carouselRef} = useContext(DetailMovieContext)
-
   const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}`;
   const { movies: latestMovies, loading, error } = useFetchMovies(url);
 
-  if (loading) return <div className="spinner">Loading movies</div>;
+  if (loading) return <div className={styles.common}>
+    <div className="spinner">Loading movies</div>
+    </div>
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
       <div className={styles.headerCarousel}>
         <h1>{title}</h1>
-        <button className={styles.nextMovie} onClick={scrollNext}>
+        <button className={styles.nextMovie}>
           View More
           <svg
             width="7"
@@ -41,7 +40,7 @@ export default function DisplayMovies({
           </svg>
         </button>
       </div>
-      <div className={styles.carouselCommon} ref={carouselRef}>
+      <div className={styles.carouselCommon}>
         {latestMovies.map((movie) => (
           <div className={styles.movieCommon} key={movie.id}>
             <img

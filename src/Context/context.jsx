@@ -1,4 +1,4 @@
-import { createContext, useState, useRef } from "react";
+import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
 export const DetailMovieContext = createContext()
@@ -6,17 +6,12 @@ export const DetailMovieContext = createContext()
 export const DetailMovieData = ({children}) => {
 
     const [selectedMovie, setSelectedMovie] = useState(null)
-    const carouselRef = useRef(null); // Step 1: Reference the carousel
-
-  const scrollNext = () => {
-    if (carouselRef.current) {
-      const scrollAmount = 300; // Adjust based on movie card width
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  }
+    const apiKey = import.meta.env.VITE_BASE_API_KEY;
+    const baseUrl = import.meta.env.VITE_BASE_BASE_URL;
+    const IMAGE_PATH = import.meta.env.VITE_BASE_IMG_PATH;
 
     return (
-        <DetailMovieContext.Provider value={{selectedMovie, setSelectedMovie, scrollNext, carouselRef}}>
+        <DetailMovieContext.Provider value={{selectedMovie, setSelectedMovie, apiKey, baseUrl, IMAGE_PATH}}>
             {children}
         </DetailMovieContext.Provider>
     )
