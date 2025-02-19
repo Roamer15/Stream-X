@@ -125,6 +125,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .carousel {
+    overflow-x: auto;
+  }
+
   .headerCarousel h1 {
     font-size: 18px;
     padding-left: 16px;

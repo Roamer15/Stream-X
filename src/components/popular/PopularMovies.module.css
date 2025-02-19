@@ -153,7 +153,7 @@ h1 {
     gap: 8px;
     padding: 10px;
     margin-bottom: 20px;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 
   .moviePopular img {
