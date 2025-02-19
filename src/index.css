@@ -126,10 +126,6 @@ button:hover {
   color: #000;
 }
 
-.h1-detail {
-  margin-top: 50px;
-}
-
 .spinner {
   display: flex;
   justify-content: center;
@@ -320,5 +316,19 @@ button {
       height: 39px;
       width: 140px;
     }
+  }
+
+  .error-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 40px;
+    color: #ff4949; /* Red for error indication */
+  }
+  
+  .error-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ccc; /* Light grey for readability */
   }
 }

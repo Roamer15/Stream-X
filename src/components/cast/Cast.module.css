@@ -15,15 +15,6 @@
     padding: 0 50px;
     overflow-x: auto;
     gap: 12px;
-
-}
-
-.cast {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
-    overflow-x: auto;
-    gap: 12px;
     scroll-behavior: smooth;
     animation: scroll;
     animation-timing-function: cubic-bezier(0.53, 0.03, 0.43, 0.73);
@@ -104,4 +95,31 @@
 .perso {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .h2 {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+
+  .cast {
+    padding: 16px;
+  }
+
+  .profiles {
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 11px;
+    }
+}
+
 }

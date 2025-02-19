@@ -1,7 +1,6 @@
 import styles from "./DisplayMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
-import { useContext } from "react";
 
 export default function DisplayMovies({
   API_KEY,

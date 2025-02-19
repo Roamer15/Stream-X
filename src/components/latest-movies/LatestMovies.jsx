@@ -1,5 +1,4 @@
 import styles from "./LatestMovies.module.css";
-import { useContext } from "react";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
 

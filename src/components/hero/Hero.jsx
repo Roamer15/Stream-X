@@ -24,7 +24,7 @@ export default function Hero({ title, backgroundImage, description, storage, mov
             <p>7h 28m</p>
           </div>
           <div className={styles.heroBtns}>
-            <div className="hero-btn">
+            <div className={styles.heroBtn}>
               <button className="btn-left">
                 <svg
                   width="20"
