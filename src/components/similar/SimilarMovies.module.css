@@ -5,7 +5,7 @@
   padding: 16px 47px;
   margin-bottom: 20px;
   scrollbar-width: thin;
-  scrollbar-color: #ff4a47  rgba(255, 255, 255, 0.1);
+  scrollbar-color: #ff4a47  #111;
 }
 
 .carouselSimilar:hover {
@@ -73,7 +73,7 @@ h1 {
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #ffffff; /* Change color to match your theme */
+  border-top: 4px solid #ff4a47; /* Change color to match your theme */
   border-radius: 50%;
   width: 40px;
   height: 40px;

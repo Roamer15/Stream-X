@@ -1,7 +1,6 @@
 import styles from "./PopularMovies.module.css";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import PropTypes from "prop-types";
-import { useContext } from "react";
 
 export default function PopularMovies({
   API_KEY,
