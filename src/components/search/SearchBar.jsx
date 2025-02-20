@@ -29,7 +29,6 @@ export default function SearchBar() {
   };
 
   const handleMovieDetail = (movie) => {
-    console.log(movie)
     setSelectedMovie(movie)
     navigate(`/details/${movie.id}`)
   }
