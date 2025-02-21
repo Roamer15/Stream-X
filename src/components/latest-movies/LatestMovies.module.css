@@ -126,7 +126,7 @@ h1 {
 
 @media (max-width: 768px) {
   .carousel {
-    overflow-x: auto;
+    overflow-x: scroll;
   }
 
   .headerCarousel h1 {

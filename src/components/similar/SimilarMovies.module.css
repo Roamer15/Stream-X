@@ -96,6 +96,9 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .carouselSimilar {
+    overflow-x: scroll;
+  }
   .headerCarousel h1 {
     font-size: 18px;
     padding-left: 16px;
