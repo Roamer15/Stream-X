@@ -13,7 +13,6 @@ export default function Home() {
   const navigate = useNavigate()
 
   const handleMovieDetail = (movie) => {
-    console.log(movie)
     setSelectedMovie(movie)
     navigate(`/details/${movie.id}`)
   }
