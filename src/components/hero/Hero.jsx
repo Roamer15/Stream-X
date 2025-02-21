@@ -11,7 +11,7 @@ export default function Hero({ title, backgroundImage, description, storage, mov
       <div
         className={styles.hero}
         style={{
-          backgroundImage: `linear-gradient(#0037, #111), url(https://image.tmdb.org/t/p/original${backgroundImage})`,
+          backgroundImage: `linear-gradient(#00003344, #111), url(https://image.tmdb.org/t/p/original${backgroundImage})`,
         }}
       >
         <Navbar />
