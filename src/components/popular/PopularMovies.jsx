@@ -47,8 +47,8 @@ export default function PopularMovies({
               <img
                 src={
                   movie.poster_path
-                    ? `${IMAGE_PATH}${movie.poster_path}`
-                    : `${IMAGE_PATH}${movie.backdrop_path}`
+                    ? `${IMAGE_PATH}${movie.backdrop_path}`
+                    : `${IMAGE_PATH}${movie.poster_path}`
                 }
                 alt={movie.title}
                 onClick={() => detail(movie)}

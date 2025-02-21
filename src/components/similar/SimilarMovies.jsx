@@ -21,8 +21,8 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, genre, de
           <img
             src={
               movie.poster_path
-                ? `${IMAGE_PATH}${movie.poster_path}`
-                : "fallback_image_url"
+                ? `${IMAGE_PATH}${movie.backdrop_path}`
+                : `${IMAGE_PATH}${movie.poster_path}`
             }
             alt={movie.title}
             onClick={()=> detail(movie)}

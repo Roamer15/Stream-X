@@ -47,9 +47,9 @@ export default function DisplayMovies({
             <img
               src={
                 movie.poster_path ? (
-                  `${IMAGE_PATH}${movie.poster_path}`
-                ) : (
                   `${IMAGE_PATH}${movie.backdrop_path}`
+                ) : (
+                  `${IMAGE_PATH}${movie.poster_path}`
                 )
               }
               alt={movie.title}
