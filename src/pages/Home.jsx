@@ -3,7 +3,7 @@ import LatestMovies from "../components/latest-movies/LatestMovies";
 import DisplayMovies from "../components/display-movies/DisplayMovies";
 import PopularMovies from "../components/popular/PopularMovies";
 import Footer from "../components/footer/Footer";
-import { DetailMovieContext } from "../Context/context";
+import { DetailMovieContext } from "../context/MovieContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 

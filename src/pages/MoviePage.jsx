@@ -1,4 +1,4 @@
-import { DetailMovieContext } from "../Context/context";
+import { DetailMovieContext } from "../context/MovieContext";
 import { useParams } from "react-router";
 import { useContext, useState, useEffect } from "react";
 import Cast from "../components/cast/Cast";

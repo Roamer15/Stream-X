@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchMovies } from '../API/api'
+import { fetchMovies } from '../services/api'
 
 const useFetchMovies = (url) => {
     const [movies, setMovies] = useState([]);

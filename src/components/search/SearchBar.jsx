@@ -1,7 +1,7 @@
 import styles from "./SearchBar.module.css";
 import { useNavigate } from "react-router";
 import { useState, useContext } from "react";
-import { DetailMovieContext } from "../../Context/context";
+import { DetailMovieContext } from "../../context/MovieContext";
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
