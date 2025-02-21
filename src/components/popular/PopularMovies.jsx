@@ -11,9 +11,9 @@ export default function PopularMovies({
 }) {
   const popularUrl = `${BASE_URL}/movie/${path}?api_key=${API_KEY}`;
 
-  const { movies: latestMovies, loading, error } = useFetchMovies(popularUrl);
+  const { movies: popularMovies, loading, error } = useFetchMovies(popularUrl);
 
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return (<p>Error: {error.message}</p>)
 
   return (
     <>
@@ -42,13 +42,13 @@ export default function PopularMovies({
         </div>
       ) : (
         <div className={styles.carouselPopular}>
-          {latestMovies.map((movie) => (
+          {popularMovies.map((movie) => (
             <div className={styles.moviePopular} key={movie.id}>
               <img
                 src={
                   movie.poster_path
                     ? `${IMAGE_PATH}${movie.poster_path}`
-                    : "fallback_image_url"
+                    : `${IMAGE_PATH}${movie.backdrop_path}`
                 }
                 alt={movie.title}
                 onClick={() => detail(movie)}

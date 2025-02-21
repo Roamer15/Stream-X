@@ -10,13 +10,15 @@ export default function DisplayMovies({
   genre,
   detail,
 }) {
-
   const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}`;
-  const { movies: latestMovies, loading, error } = useFetchMovies(url);
+  const { movies: displayMovies, loading, error } = useFetchMovies(url);
 
-  if (loading) return <div className={styles.common}>
-    <div className="spinner"></div>
-    </div>
+  if (loading)
+    return (
+      <div className={styles.common}>
+        <div className="spinner"></div>
+      </div>
+    );
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -40,13 +42,15 @@ export default function DisplayMovies({
         </button>
       </div>
       <div className={styles.carouselCommon}>
-        {latestMovies.map((movie) => (
+        {displayMovies.map((movie) => (
           <div className={styles.movieCommon} key={movie.id}>
             <img
               src={
-                movie.poster_path
-                  ? `${IMAGE_PATH}${movie.poster_path}`
-                  :  <div className="spinner"></div>
+                movie.poster_path ? (
+                  `${IMAGE_PATH}${movie.poster_path}`
+                ) : (
+                  `${IMAGE_PATH}${movie.backdrop_path}`
+                )
               }
               alt={movie.title}
               onClick={() => detail(movie)}
