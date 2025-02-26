@@ -23,7 +23,7 @@ export default function Home() {
         <Navbar />
         <div className="movie-detail">
           <img
-            src="https://s3-alpha-sig.figma.com/img/dffb/b860/559f834e0275c009608027ccae5ee787?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rkpO0pLndEZ7dHynMJtiO9nZc99PuLuk24zTVIUT0MRQscYgwziIDSruNUsKcB9UqDNlHZUJqUC04E9WCs7kZg6jC1AC03vSYMBX1lGNvQYsvHGpHPyKzBBx7JtMVI8Vl0jMzhAN5Ha3CDWP-mNKGJgraDO6IQLyQnh4l5A0ASPvLjuKjVte4awXJu9XvPTBnkihWYkEW~yqnHtTzbIThNcRpkKZfExR5AnD-h8xsa3F8DaqE3rBzP6uA2Aw7BFz~Vp7AIkV62inMC26DGLemANIx9ibBrVEsDyaBbHdZAR7OmvXszESGSKES4oAyYIAFkLStffuJaweSH9z8PolvA__"
+            src="https://s3-alpha-sig.figma.com/img/dffb/b860/559f834e0275c009608027ccae5ee787?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=RrXNG2e1Gxo46bUWRHO~k9UnAC0k-oAAQddEslFWVECZyxe11eZruAiGLugnvAWtF2Q-J~I3NQ6TaNpbPnV1vPCFahFYJamUvXJRO8qZbYDQ9Q~EmqARuGBBVhZdiv-T~CjI54azHnd2mikSFj5ZfC7DmSDv75r-GCGlr5sdcQUthtiitoyitHYtB-Oy~aCslT5pKVS7xboatvFgJ0sP~fqNo23VKzv~mJO2V55iDubLetFspGYDBZVT14EAbjOLZD~JypZpfd7Io0vO~LFzAoKpovCQqt5kCJw4S-jZiZDW5V6f8aWOT11GuuRHfzRXqI1MRYjvs5uEl8V0YI-e8g__"
             alt="spider"
           />
           <div className="initial">
