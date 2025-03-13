@@ -60,7 +60,7 @@ export default function Navbar() {
       <div className={styles.search}>
         <SearchBar />
         <div className={styles.profile}>
-            <img src="https://s3-alpha-sig.figma.com/img/44dd/d9c1/4b2cc5cc64806068acfe1df770c58553?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gXzN828VeZomqtEcOuGP8kZpaL7~Q7b8kI34~93OdlHZsDFRwE4ohoIZr-oxTb8krBUXTTciBc~TljFvKhrdxYR1FeK5O5fBQYMAcucSmA0Vch6bErRa-jWTOodk1hMRr3uWTasZYwxdvHiNpp4NJJFebDYSeYZu5hTsjrj39YwHwjEaN1t97z9F-XlFoYgvrduo8E155z1nt9FLzIpi2-o9UWs2NqKRuE3xQbHOzwS0i2C1eZ-lNqkOA~91nuVOeN~BTpDPDqvlphUMi5TdivflsNHodhF3g0EV~HSx~NjClgBLO4at~I5BnoAQIIHv5DUffckKs3CkPzieh-SIbA__" alt="profile" />
+            <img src="https://s3-alpha-sig.figma.com/img/44dd/d9c1/4b2cc5cc64806068acfe1df770c58553?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VVkraN95SWEqd7fnXkU5uIPSd5VE3-xTauFM~9YAleb0cSFb4ajdFxNJinf21RWmp0L9kPmLsbEjozPLq7iD0I1fzeFABBIvyXRHaM20qaVEVi-gKH51a~d~-gtIkr8dlhd~qH4D1D7AZBIb1KB7GPqYGCogMx3IJD0L2dq5FQzkSjJSyW-AEKXsrUBQwfjen0KaPtTFNn7bUW3aHO5YMnAGGYXLskKkswcDC38PbXoowwHoq8sEmkZ4-VkcKseNvC4ft-TEQ~p3mMZBJlYxr9T5SacyALvBRYfXAJ-vqSZaex-7i7T9VumTKUw1Pd7j~osypGSwxwQU2HfXq02-xw__" alt="profile" />
         </div>
       </div>
     </div>
