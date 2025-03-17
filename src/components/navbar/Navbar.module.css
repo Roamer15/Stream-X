@@ -160,6 +160,7 @@ svg {
     }
   
     .nav {
+      display: none;
       position: absolute;
       top: 60px;
       right: 0;
@@ -168,15 +169,14 @@ svg {
       flex-direction: column;
       background-color: rgba(0, 0, 0, 0.9);
       padding: 20px;
-      z-index: -5;
       transition: transform 0.3s ease-in-out;
       border-radius: 10px;
     }
   
     .nav.open {
+      display: block;
       transition: 0.2s ease-in-out;
       transform: translateX(0);
-      z-index: 5;
     }
   
     .nav a {

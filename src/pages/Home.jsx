@@ -6,16 +6,17 @@ import Footer from "../components/footer/Footer";
 import { DetailMovieContext } from "../context/MovieContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
+import ChatBot from "../components/chatbot/ChatBot";
 
 export default function Home() {
-
-  const { setSelectedMovie, apiKey, baseUrl, IMAGE_PATH } = useContext(DetailMovieContext)
-  const navigate = useNavigate()
+  const { setSelectedMovie, apiKey, baseUrl, IMAGE_PATH } =
+    useContext(DetailMovieContext);
+  const navigate = useNavigate();
 
   const handleMovieDetail = (movie) => {
-    setSelectedMovie(movie)
-    navigate(`/details/${movie.id}`)
-  }
+    setSelectedMovie(movie);
+    navigate(`/details/${movie.id}`);
+  };
 
   return (
     <>
@@ -134,7 +135,7 @@ export default function Home() {
         genre={35}
         detail={handleMovieDetail}
       />
-
+      <ChatBot />
       <Footer />
     </>
   );
