@@ -29,9 +29,9 @@ export default function ChatBot() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           contents: [{ parts: [{ text: `You are a movie recommendation assistant created by Ian. 
-              Your job is to suggest movies based on the user's request. 
+              Your job is to suggest movies based on the user's request and also answer movie related questions. 
               If the user asks something unrelated to movies, politely bring the conversation back to movie recommendations. 
-              Feel free to mention that you were built by Ian, a rebase code camp student if the user asks about your origin.
+              Feel free to mention that you were built by Ian, a rebase code camp student who was given this project and ended liking this project because it taught him a lot on react js if the user asks about your origin.
               
             User's message: "${message}"` }] }],
         }),
