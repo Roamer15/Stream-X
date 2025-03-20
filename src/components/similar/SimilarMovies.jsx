@@ -20,7 +20,7 @@ export default function DisplayMovies({ API_KEY, BASE_URL, IMAGE_PATH, genre, de
         <div className={styles.movieCommon} key={movie.id}>
           <img
             src={
-              movie.poster_path
+              movie.backdrop_path
                 ? `${IMAGE_PATH}${movie.backdrop_path}`
                 : `${IMAGE_PATH}${movie.poster_path}`
             }
