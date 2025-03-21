@@ -334,6 +334,22 @@ button {
     margin-bottom: 20px;
     color: #ccc; /* Light grey for readability */
   }
+
+  .search-item {
+    flex-direction: column;
+    padding: 7px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+.search-item {
+  padding: 7px;
+}
+
+.search-item img {
+  width: auto;
+  margin: auto;
+}
 }
 
 
