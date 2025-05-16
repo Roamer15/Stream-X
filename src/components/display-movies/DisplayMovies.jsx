@@ -20,7 +20,7 @@ export default function DisplayMovies({
       </div>
     );
   if (error) return <p>Error: {error.message}</p>;
-
+console.log(displayMovies)
   return (
     <>
       <div className={styles.headerCarousel}>
@@ -46,7 +46,7 @@ export default function DisplayMovies({
           <div className={styles.movieCommon} key={movie.id}>
             <img
               src={
-                movie.poster_path ? (
+                movie.backdrop_path ? (
                   `${IMAGE_PATH}${movie.backdrop_path}`
                 ) : (
                   `${IMAGE_PATH}${movie.poster_path}`

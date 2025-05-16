@@ -6,16 +6,17 @@ import Footer from "../components/footer/Footer";
 import { DetailMovieContext } from "../context/MovieContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
+import ChatBot from "../components/chatbot/ChatBot";
 
 export default function Home() {
-
-  const { setSelectedMovie, apiKey, baseUrl, IMAGE_PATH } = useContext(DetailMovieContext)
-  const navigate = useNavigate()
+  const { setSelectedMovie, apiKey, baseUrl, IMAGE_PATH } =
+    useContext(DetailMovieContext);
+  const navigate = useNavigate();
 
   const handleMovieDetail = (movie) => {
-    setSelectedMovie(movie)
-    navigate(`/details/${movie.id}`)
-  }
+    setSelectedMovie(movie);
+    navigate(`/details/${movie.id}`);
+  };
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home() {
         <Navbar />
         <div className="movie-detail">
           <img
-            src="https://s3-alpha-sig.figma.com/img/dffb/b860/559f834e0275c009608027ccae5ee787?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=RrXNG2e1Gxo46bUWRHO~k9UnAC0k-oAAQddEslFWVECZyxe11eZruAiGLugnvAWtF2Q-J~I3NQ6TaNpbPnV1vPCFahFYJamUvXJRO8qZbYDQ9Q~EmqARuGBBVhZdiv-T~CjI54azHnd2mikSFj5ZfC7DmSDv75r-GCGlr5sdcQUthtiitoyitHYtB-Oy~aCslT5pKVS7xboatvFgJ0sP~fqNo23VKzv~mJO2V55iDubLetFspGYDBZVT14EAbjOLZD~JypZpfd7Io0vO~LFzAoKpovCQqt5kCJw4S-jZiZDW5V6f8aWOT11GuuRHfzRXqI1MRYjvs5uEl8V0YI-e8g__"
+            src="https://wallpapers.com/images/featured/spider-man-background-lyuziw9ra4dw36ai.webp"
             alt="spider"
           />
           <div className="initial">
@@ -134,7 +135,7 @@ export default function Home() {
         genre={35}
         detail={handleMovieDetail}
       />
-
+      <ChatBot />
       <Footer />
     </>
   );

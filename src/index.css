@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 
 :root {
   --primary-font: -apple-system, BlinkMacSystemFont, "SF Compact", "Helvetica Neue", Arial, sans-serif;
@@ -22,7 +24,7 @@ body {
 
 .header {
   height: 950px;
-  background-image: linear-gradient(#00003344, #111), url('https://s3-alpha-sig.figma.com/img/5909/0ea8/b488be9c50166f91c91c010eec13fd2e?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=DUUkApQJxmHfnwzv7VjqLT9OrjjRDNUiXPzkAU0B972d2O5ilaUBSVMW-I5UwCFUYqwpRPTBZbnlbjqGrYzb0JrSlXBLwNmekj7ruEtpKnuT94z40EIkNLr4mhqovG-z4w5ShYEHz5okK0mbcit5VQKV98eTcv70KVufxfK1XYvrVoqf02DyfabeWxu-Wgj38Plfaiu2Tx2yghm73OTNaD0LlW31QAerqW3OaYeovbxUNQynblfTpeUaE6R~GTyrJH64kKCNHHg-8~o0UluC875K4dixKqHLRU5kdrpZYxXmKaxMSZHsSSEt3iwkofQeDw5LRQL09ND6DBhvNiy7wQ__');
+  background-image: linear-gradient(#00003344, #111), url('https://s3-alpha-sig.figma.com/img/5909/0ea8/b488be9c50166f91c91c010eec13fd2e?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=aGV9Yn3fGD6ttc4K6xCEzY1pTqYpkLdWWgTEmhLLV-4Z409mVBmwYNSAO5YC71WXncnqlo3o2qTednqsUI-rqgT14iFwzX8SU-6sG2GnpHMfA-JvLmgWdeWopgw9bKwb2DKYXuA~FVMXMIfU6Q8gdm5Ol3TuDIIL6I61nf1Seag-IJe~gV-3VdwJoBEiPNZR4HCjT-er749xP6CsmeUW98z-vbvWpES8cj2BCikhSG-ATIjO5iTaJkfYkO27W7JqFSL8hLitxnOiYHwLVIbbwH2iuF~KzvyjpnCR51q5irzbB6L8rH7Z7JPZw66sR9edEYDVijvc91F-VV5nWdyvzw__');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -331,5 +333,167 @@ button {
     font-size: 1rem;
     margin-bottom: 20px;
     color: #ccc; /* Light grey for readability */
+  }
+
+  .search-item {
+    flex-direction: column;
+    padding: 7px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+.search-item {
+  padding: 7px;
+}
+
+.search-item img {
+  width: auto;
+  margin: auto;
+}
+}
+
+
+/* Floating Chat Button */
+.message-btn {
+  position: fixed;
+  display: flex;
+  bottom: 20px;
+  right: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color:  #ff4949;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chatbox Styling */
+.chatbox {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 100000;
+  max-width: 400px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+
+  svg {
+    color: #ff4949;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.chatbox.open {
+  display: flex;
+}
+
+/* Chat Top */
+.chat-top {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+
+  h2 {
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+.chat-top .chatbot-icon {
+  background-color: red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* Chat Body */
+.chat-body {
+  background: #111;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 5px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  background:  #ff4949;
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.user-message {
+  background: black;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #222;
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+
+    input {
+      flex: 1;
+      padding: 20px;
+      border-radius: 40px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+
+      &:focus {
+        border: 1px solid #ff4949;
+      }
+    }
+  }
+
+  button {
+    background:  #ff4949;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 40px;
+    margin-left: 10px;
+    cursor: pointer;
   }
 }
